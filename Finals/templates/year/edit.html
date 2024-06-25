@@ -5,12 +5,12 @@ Edit level
 {% endblock title %}
 
 {% block content %}
-
-<div class="col-md-4 mx-auto mt-3 text-white bg-dark">
+{% include "include/navbar.html" %}
+<div class="col-md-4 mx-auto mt-3 text-white bg-primary py-3">
     <form action="/year/update/{{ year.year_id }}" method="post">
         {% csrf_token %}
         <div class="mb-3">
-            <label for="year">level</label>
+            <label for="year">Year Level</label>
             <input type="text" class="form-control" id="year" name="year" value="{{ year.year }}" />
         </div>
         <button type="submit" class="btn btn-success float-end col-12 col-md-3">Update</button>

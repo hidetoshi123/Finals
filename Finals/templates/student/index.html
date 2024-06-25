@@ -10,13 +10,13 @@ List of Student
 {% include "include/navbar.html" %}
 <div class="mb-5"></div>
 {% include "include/messages.html" %}
-<div class="col-md-8 mx-auto rounded-5 py-5 px-5 mt-5 bg-primary">
-    <div class="table-responsive">
+<div class="col-md-10 mx-auto rounded-5 pt-5 pb-1 px-5 mt-5 bg-primary">
+    <div class="table">
         <table class="table table-hover table-light table-striped">
             <form method="GET" action="/students">
                 <div class="input-group mb-5 mr-5 px-5" >
                     <input class="form-control" type="search" name="students" placeholder="Search" aria-label="Search" value="{{ query }}">
-                    <button class="btn btn-secondary text-white" type="submit">Search</button>
+                    <button class="btn btn-success text-white" type="submit">Search</button>
                 </div>
             </form>
             <thead>
@@ -25,7 +25,9 @@ List of Student
                     <th>First Name</th>
                     <th>Middle Name</th>
                     <th>Last Name</th>
-                    <th>Level</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Year Level</th>
                     <th>Course</th>
                     <th>Section</th>
                     <th>Address</th>
@@ -39,6 +41,8 @@ List of Student
                         <td>{{ student.first_name }}</td>
                         <td>{{ student.middle_name }}</td>
                         <td>{{ student.last_name }}</td>
+                        <td>{{ student.age }}</td>
+                        <td>{{ student.gender }}</td>
                         <td>{{ student.year }}</td>
                         <td>{{ student.course }}</td>
                         <td>{{ student.section }}</td>
@@ -54,7 +58,8 @@ List of Student
                {% endfor %}
             </tbody>
         </table>
-        <a href="/students/create" class="btn btn-success mx-auto my-2">Add Student</a>
+        <a href="/students/create" class="btn btn-success mx-auto mt-2 mb-4 ">Add Student</a>
     </div>
 </div>
+<div class="mb-5"></div>
 {% endblock content %}
